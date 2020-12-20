@@ -1,0 +1,316 @@
+
+
+
+Stack:
+
+	- Implementing the undo feature
+	- Build Compiler (Syntax Checking)
+	- Evaluate Expressions (e.g. 1 + 2 * 3)
+	- Build Navigation (E.g. Forward/Back)
+	
+Operations:
+
+push(item): to add element in stack
+pop(): Removes the top element
+peek(): returns the item from pop which suppose to be removed.
+isEmpty(): to check whether stack is empty or not.
+
+------------------------------------------------
+
+Queue:
+
+	- Printers
+	- Operating Systems
+	- Web Servers
+	- Live Support Systems
+	
+Operations:
+
+enqueue: To insert the element from rear. O(1)
+dequeue: To remove the element from front. O(1) 
+peek: To tell the element that will dequeue next. O(1)
+isEmpty: To check whether the queue is empty or not. O(1)
+isFull: To check whether the queue is full or not. O(1)
+
+
+
+-----------------------------------------------
+
+Searching:
+	1. Linear Search
+	2. Binary Search
+	3. Ternary Search
+	4. Jump Search
+	5. Exponential Search
+
+Sorting:
+
+	Counting Sorting Algorithms:
+
+	1. Bubble Sort
+	2. Selection Sort
+	3. Insertion Sort
+	4. Merge Sort
+	5. Quick Sort
+	
+	Non-Counting Sorting Algorithms:
+	
+	6. Counting Sort
+	7. Bucket Sort
+	8. Radix Sort
+	
+----------------------------
+
+Linear Search/Sequential Search:
+
+Time Complexity:
+
+Best Case: Element is found at first index : O(1)
+Worst Case: Element is found at last index : O(n)
+
+Space Complexity:
+
+A single unit of memory to store the elements being searched is required.
+The Space Complexity of Linear Search is O(1)
+
+------------------------------
+
+Binary Search/logarithmic Search:
+
+It is referred as Divide and Conquer Methodology.
+It requires the input data set to be sorted beforehand.
+There are two ways to implement this algo:
+	1. Iterative
+	2. Recursive
+	
+Time Complexity:
+
+Binary search divides the array into two halves each times.
+That is the reason, the time complexity is O(log(N))
+
+Space Complexity:
+
+A single unit of memory to store the elements being searched is required.
+The Space Complexity of Linear Search is O(1)
+
+If the Binary search implemented recursively, it needs to store the call to the method on a stack. It may need O(log(N) in worst case scenerio.
+
+--------------------------------------
+
+Bubble Sort:
+
+	- A simplest sorting algo.
+	
+	Pass 1:
+	
+		11	3	6	15	4
+		3	11	6	15	4
+		3	6	11	15	4
+		3	5	11	15	4
+		3	5	11	4	15 (The larget element is at right position)
+	
+	Passing keep continuing	till the all elements are at right position.
+		
+Time Complexity:
+
+	The total comparisons measured is : O(n^2)
+	
+	Inner Loop * No of times Outer Loop Runs
+	
+Worst:	O(n) * O(n) = O(n^2)
+Best: 	O(n)
+
+
+------------------------------------------------
+
+Selection Sort:
+
+		17	10	7	29	2 (Compares index 0 and 1)
+		10	17	7	29	2 (Compares index 0 and 2)
+		7	17	10	29	2 (Compares index 0 and 3)
+		7	17	10	29	2 (Compares index 0 and 4)
+		2	17	10	29	7 (Smallest Element at position 0)
+
+	And keeping continuing till the last pass.
+ 
+		2	7	10	17	29 (N-1 passes are required)
+
+Time Complexity:
+
+			Best	Worst
+Passes		O(n)	O(n)		
+Comparisons	O(n)	O(n)
+Quadratic	O(n^2)	o(n^2)
+
+---------------------------------------------------
+
+Insertion Sort:
+
+	10	2	6	15	4	1	(Comare with index 1 i.e. 2)
+	
+	Pass 1:
+	
+	2	10	6	15	4	1
+	
+	Pass 2:
+	
+	2	6	10	15	4	1
+	
+	Pass 3:
+	
+	2	6	10	15	4	1
+	
+	Pass 4:
+	
+	2	4	6	10	15	1
+	
+	Pass 5:
+	
+	1	2	4	6	10	15
+	
+
+Insertion Sort Complexity:
+
+				Best 	Worst
+
+Passes			O(n)	O(n)
+Shift Items		O(1)	O(n)
+Total			O(n)	O(n^2)	
+
+--------------------------------------
+
+Merge Sort:
+
+						13	23	2	41	54	35	17	4
+			
+				13	23	2	41					54	35	17	4
+			
+			13	23			2	41			54	35			17	4
+			
+		 13			23	 2			41	 54			35	 17			4	
+			
+---------------------------------------------------------------------			
+	
+		13	23				2	41			35	54				4	17
+		
+			2	13	23	41						4	17	35	54
+			
+						2	4	13	17	23	35	41	54
+
+
+---------------------------------------------------------
+
+Quick Sort:
+
+Partitioning
+
+array - choose a value X (Pivot) from given array
+
+	8	40	15	10	32	5	7
+	
+Pivot can be:
+
+		- the first element 
+		- the last element
+		- the mid element
+		- any random element
+
+Pivot: 7
+
+	8	40	15	10	32	5	7 (Pivot)
+				
+		5		7  	8	40	15	10	32(Pivot)		
+
+			8	15	10(Pivot)		32		40
+
+		8		10		15
+
+
+	5	7	8	10	15	32	40
+
+Quick Sort Implementation By Two-Ways:
+
+	1. Recursive
+	2. Iterative
+	
+--------------------------------------
+
+Exponential Search:
+
+	- Array must be sorted.
+	- Element to search : 93
+	
+
+	7	12	34	57	65	74	61	88	93	100
+	
+	array[0] = 7, not 93
+	
+	2^1 = 1
+	
+	array[1] = 12, not 93
+	
+	1^2 = 4
+	
+	array[2] = 34, not 93
+	
+	2^2 = 4
+	
+	array[4] = 65, not 93
+	
+	4^2 = 8
+	
+	array[8] = 93, yes element found.
+	
+	
+	1. Start with value, i=0
+
+
+-----------------------------------------------
+
+
+Maven: Maven is a Project Management Tools
+
+Generally, use Maven for two purposes:
+
+	- Manage Depedencies
+	- Standard Project Structure
+	
+GroupId: Name of company, group, orgranization
+
+	com.simplilearn
+
+ArtifactId: Name of the project: 
+
+Version: A speicif release version 1.0, 2.0, 2.2 etc
+
+SNAPSHOT means project is under active development.
+FINAL: Project is development or deployed.
+
+----------------
+
+Local Repository:
+	located on developer's computer
+	Windows: c:/users/<user-home-dir>/.m2/repository
+	Mac and Linux : ~/.m2/repository
+
+Central Repository:
+
+- By default, maven will search the Maven Central Repository (Remote) for all the depedenices mentioned in pom.xml
+
+--------------------------------------------
+
+mvn archetype:generate -DgroupId=simplilearn -DartifactId=MavenDemoProject -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
